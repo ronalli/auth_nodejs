@@ -57,7 +57,8 @@ class authController {
 
   async getUsers(req, res) {
     try {
-      res.json('server work');
+      const users = await User.find();
+      return res.json({ users });
     } catch (err) {
       console.log(err);
       res.status(400).json({ message: '' });
