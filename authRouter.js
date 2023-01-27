@@ -6,7 +6,7 @@ const { check } = require('express-validator');
 router.post(
   '/registration',
   [
-    check('username', 'Name must not be empty').notEmpty(),
+    check('username', 'Name must not be empty').trim().notEmpty(),
     check(
       'password',
       'Password greater than 4 and less than 10 characters'
